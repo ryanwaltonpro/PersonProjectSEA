@@ -3,6 +3,7 @@ package com.example.personproject.controllers;
 import com.example.personproject.entities.Person;
 import com.example.personproject.services.PersonService;
 import org.apache.coyote.Response;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,9 @@ import java.util.List;
 @RestController
 public class PersonController {
 
-    PersonService service = new PersonService();
+    @Autowired
+    PersonService service;
+
     @GetMapping(path="/", produces="application/json")
     public List<Person> getPeople(){
         return service.getAllPeople();
