@@ -1,13 +1,11 @@
 package com.example.personproject.controllers;
 
 import com.example.personproject.entities.Person;
-import com.example.personproject.repositories.PersonService;
-import org.apache.catalina.User;
+import com.example.personproject.services.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
