@@ -19,4 +19,10 @@ public class PersonService {
     public void addPerson(Person p){
         people.add(p);
     }
+    public void deletePerson(int id){
+        people.removeIf(p -> p.getId() == id);
+    }
+    public void updatePerson(Person person){
+        people.stream().filter(p -> p.getId() == person.getId()).map(p ->  person);
+    }
 }

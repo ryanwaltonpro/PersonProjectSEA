@@ -16,7 +16,18 @@ import javax.validation.constraints.Size;
 @Component
 @Entity(name = "Person")
 public class Person {
+    public Person(){
 
+    }
+    public Person(String firstName, String lastName, int Age){
+        this.firstname = firstName;
+        this.lastname = lastName;
+        this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     @Id
     @NotNull
