@@ -30,7 +30,7 @@ public class PersonController {
         service.deletePerson(id);
         return ResponseEntity.ok().build();
     }
-    @PatchMapping(path="/delete")
+    @PatchMapping(path="/update")
     public ResponseEntity<?> updatePerson(@RequestBody Person person){
         service.updatePerson(person);
         return ResponseEntity.ok().build();

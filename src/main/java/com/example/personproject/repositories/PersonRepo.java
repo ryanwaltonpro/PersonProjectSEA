@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PersonRepo extends JpaRepository<Person, Long> {
+public interface PersonRepo extends JpaRepository<Person, Integer> {
     List<Person> fundPersonByName(String name);
 }
