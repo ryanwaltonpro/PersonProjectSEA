@@ -1,5 +1,7 @@
 package com.example.personproject.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Component;
@@ -12,7 +14,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
+@Getter
+@Setter
 @Entity(name = "Person")
 public class Person {
     public Person(){

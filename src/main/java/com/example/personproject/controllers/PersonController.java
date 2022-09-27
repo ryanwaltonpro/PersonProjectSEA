@@ -1,5 +1,6 @@
 package com.example.personproject.controllers;
 
+import com.example.personproject.DTO.PersonDTO;
 import com.example.personproject.entities.Person;
 import com.example.personproject.services.PersonService;
 import org.apache.coyote.Response;
@@ -23,9 +24,9 @@ public class PersonController {
     }
 
     @PostMapping(path="/create", produces="application/json")
-    public ResponseEntity<Person> createPerson(@RequestBody @Valid Person person){
+    public ResponseEntity<PersonDTO> createPerson(@RequestBody @Valid Person person){
         service.addPerson(person);
-        return new ResponseEntity<Person>(person, HttpStatus.OK);
+        return new ResponseEntity<PersonDTO>(new PersonDTO(person), HttpStatus.OK);
 
     }
     @DeleteMapping(path="/delete/")

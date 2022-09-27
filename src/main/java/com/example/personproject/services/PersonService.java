@@ -16,21 +16,25 @@ public class PersonService {
     @Autowired
     PersonRepo personRepository;
 
-    private List<Person> people;
+    //private List<Person> people;
     public PersonService(){
-        people = new ArrayList<>();
+        //people = new ArrayList<>();
     }
     public List<Person> getAllPeople(){
-        return people;
+        return personRepository.findAll();
     }
 
     public void addPerson(Person p){
-        people.add(p);
+        personRepository.save(p);
+        // people.add(p);
     }
     public void deletePerson(int id){
-        people.removeIf(p -> p.getId() == id);
+        personRepository.deleteById(id);
+        // people.removeIf(p -> p.getId() == id);
     }
     public void updatePerson(Person person){
-        people.stream().filter(p -> p.getId() == person.getId()).map(p ->  person);
+        personRepository.deleteById(person.getId());
+        personRepository.save(person)
+        //people.stream().filter(p -> p.getId() == person.getId()).map(p ->  person);
     }
 }
